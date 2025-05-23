@@ -44,6 +44,7 @@ func Get(c *gin.Context) {
 	for _, eachTodo := range todos {
 		if eachTodo.ID == id {
 			c.JSON(http.StatusOK, gin.H{"success": true, "message": "fetch todo", "data": eachTodo})
+			return
 		}
 	}
 
