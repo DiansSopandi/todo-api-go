@@ -15,6 +15,16 @@ type Todo struct {
 var todos = []Todo{}
 var nextID = 1
 
+func RegisterRoutes(r *gin.Engine) {
+	todoGroup := r.Group("/todo"){
+		r.GET("/", GetAll)
+		r.GET("/:id", Get)
+		r.POST("/", Create)
+		r.PUT("/:id", Update)
+		r.DELETE("/:id", Delete)
+	}
+}
+
 // GetTodo godoc
 // @Summary Get all todos
 // @Description Get a list of all todo
