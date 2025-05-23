@@ -30,10 +30,10 @@ func main() {
 	docs.SwaggerInfo.Schemes = []string{"http"}
 
 	r.GET("/todo", todo.GetAll)
-	// r.GET("/todo/:id", todo.Get)
-	// r.POST("/todo", todo.Create)
-	// r.PUT("/todo/:id", todo.Update)
-	// r.DELETE("/todo/:id", todo.Delete)
+	r.GET("/todo/:id", todo.Get)
+	r.POST("/todo", todo.Create)
+	r.PUT("/todo/:id", todo.Update)
+	r.DELETE("/todo/:id", todo.Delete)
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
