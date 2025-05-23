@@ -15,7 +15,7 @@ type Todo struct {
 var todos = []Todo{}
 var nextID = 1
 
-func RegisterRoutes(r *gin.Engine) {
+func TodoRoutes(r *gin.Engine) {
 	todoGroup := r.Group("/todo"){
 		r.GET("/", GetAll)
 		r.GET("/:id", Get)
